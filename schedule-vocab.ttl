@@ -2,3 +2,38 @@
 # τις κλάσεις και τις ιδιότητες του ωρολογίου προγράμματος.
 
 
+PREFIX vocab: <https://dilab77.ionio.gr/user/gounarop/vocab#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#)>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+vocab:Teacher rdf:type rdfs:Class.
+vocab:Course rdf:type rdfs:Class.
+vocab:Room rdf:type rdfs:Class.
+vocab:Lecture rdf:type rdfs:Class.
+vocab:Teacher rdfs:subClassOf foaf:Person.
+
+vocab:Καθηγητής rdf:type rdf:Property .
+vocab:Μάθημα rdf:type rdf:Property .
+vocab:Αίθουσα rdf:type rdf:Property .
+vocab:Εξάμηνο rdf:type rdf:Property .
+vocab:Ωρα%20Εναρξης rdf:type rdf:Property .
+vocab:Ωρα%20Ληξης rdf:type rdf:Property .
+vocab:Μερα rdf:type rdf:Property .
+
+vocab:Καθηγητής rdfs:domain vocab:Lecture .
+vocab:Μάθημα rdfs:domain vocab:Lecture .
+vocab:Αίθουσα rdfs:domain vocab:Lecture .
+vocab:Εξάμηνο rdfs:domain vocab:Lecture .
+vocab:Ωρα%20Εναρξης rdfs:domain vocab:Lecture .
+vocab:Ωρα%20Ληξης rdfs:domain vocab:Lecture .
+vocab:Μερα rdfs:domain xsd:string .
+
+vocab:Μάθημα rdfs:range vocab:Course.
+vocab:Καθηγητής rdfs:range vocab:Teacher.
+vocab:Αίθουσα rdfs:range vocab:Room.
+vocab:Εξάμηνο rdfs:range xsd:string .
+vocab:Ωρα%20Εναρξης rdfs:range xsd:time .
+vocab:Ωρα%20Ληξης rdfs:range xsd:time .
+vocab:Μερα rdfs:range xsd:string .
